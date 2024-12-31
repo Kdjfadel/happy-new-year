@@ -1,54 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'/>
-
 </head>
 <style>
     body{
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-      background-image: url(Antonio.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-color: black;
+        display: flex;
+        text-align: center;justify-content: center;
+        align-items: center;
+        background-color: black;
     }
- 
+    div{
+        font-size: 120px;
+        font-family: "roboto";
+       color: rgb(190, 143, 12);
+       position: relative
+       ;
+       top: 200px;
+    }
 </style>
 <body>
-    <audio src="aide _Sonnerie.wav"  loop id="firework-sound"></audio>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
-<script src="jquery.fireworks.js"></script>
-<script>
-    $('body').fireworks();
-      // Récupérer l'élément audio
-     const audio = document.getElementById('firework-sound');
-
-        // Fonction pour démarrer l'audio
-        function startAudio() {
-            audio.play().catch((error) => {
-                console.log("Lecture automatique bloquée.");
-            });
-        }
-
-        // Détection de l'interaction de la souris (mousemove) ou du toucher (touchstart)
-        document.body.addEventListener('mousemove', startAudio, { once: true });
-        document.body.addEventListener('touchstart', startAudio, { once: true });
-
-
-</script>
-
-   
-</body>
-<script defer>
+    <div>
+        5
+    </div>
+    <script>
+         const div =document.querySelector("div")
+    compte=5
     
-</script>
+      
+    function compter(){
+    
+        compte=compte-1
+        console.log(compte)
+        div.innerHTML=compte
+        if(compte===0){
+   
+        clearInterval(compteur)
+        window.location.href="a.html"
+        
+    }
+
+    }
+     let  compteur=setInterval(compter,1000)
+    </script>
+</body>
 </html>
-
-
